@@ -20,14 +20,24 @@ function GetAllDataRealtime() {
 
 function AddItemsToTable(name, type){
     var body = document.getElementById('list');
-    var div = document.createElement('div');
-    var header = document.createElement('h1');
+    var col = document.createElement('col');
+    col.classList.add("col");
+    var card = document.createElement('div');
+    card.classList.add("card");
+    card.classList.add("h-100");
+    var cardbody = document.createElement('div');
+    cardbody.classList.add("card-body");
+    var title = document.createElement('h5');
+    title.classList.add("card-title");
     var info = document.createElement('p');
-    header.innerHTML = name;
+    info.classList.add("card-text");
+    title.innerHTML = name;
     info.innerHTML = type;
-    div.appendChild(header);
-    div.appendChild(info);
-    body.appendChild(div);
+    cardbody.appendChild(title);
+    cardbody.appendChild(info);
+    card.appendChild(cardbody)
+    col.appendChild(card);
+    body.appendChild(col);
 }
 
 function AddAllItemsToTheTable(SwitchList){
